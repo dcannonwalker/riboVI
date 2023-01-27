@@ -7,7 +7,6 @@
 #'   including `phi$mu`
 #' @param differentials List of differentials functions, should have
 #' 'mu' and 'Sigma'
-#' @export
 nc_update_mvn <- function(data, pars, differentials, i) {
   Sigma <-
     MASS::ginv(

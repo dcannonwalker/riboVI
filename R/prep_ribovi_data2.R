@@ -1,6 +1,5 @@
-#' Prepare list of objects required for `fit_ncvi()`. This is an
-#' updated version of `prep_ncvi()`, which will replace it once
-#' I've done some debugging.
+#' An alternative to `prep_ribovi_data()`
+#' to prepare list of objects required for `ribovi()`. 
 #'
 #' @param counts Data frame of counts with first column the
 #' gene ID
@@ -8,10 +7,8 @@
 #' @param X Fixed effects design matrix (expects preparation in column 2
 #' and treatment in column 3)
 #' @param Z Random effects design matrix
-#'
-#' @export
 
-prep_ncvi2 <- function(counts, S, X, Z) {
+prep_ribovi_data2 <- function(counts, S, X, Z) {
 
   N <- ncol(counts) - 1
   P <- ncol(X)

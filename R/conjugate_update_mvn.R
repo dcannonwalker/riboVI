@@ -1,11 +1,7 @@
-## To do: this probably doesn't need to be its own function
-##  can probably just incorporate into the update_theta() function
-##  for this example
 #' Conjugate update mu0 in the REH example
 #'
 #' @param data List with `G, P`
 #' @param pars List with `phi` and `theta`
-#' @export
 conjugate_update_mvn_REH <- function(data, pars) {
 
   phi <- pars$phi

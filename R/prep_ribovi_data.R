@@ -1,4 +1,4 @@
-#' Prepare list of objects required for `fit_ncvi()`
+#' Prepare list of objects required for `fit_ribovi()`
 #'
 #' @param counts Data frame of counts with first column the
 #' gene ID
@@ -8,7 +8,7 @@
 #' @param Z Random effects design matrix
 #'
 #' @export
-prep_ncvi <- function(counts, S, X, Z, calc_S = FALSE) {
+prep_ribovi_data <- function(counts, S, X, Z, calc_S = FALSE) {
   P <- ncol(X)
   U <- ncol(Z)
   y <- list()

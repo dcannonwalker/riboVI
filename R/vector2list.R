@@ -4,7 +4,6 @@
 #' @param y The original vector
 #' @param G Integer for the number of groups
 #' @param N Integer for the length of each group
-#' @export
 vector2list <- function(y, G, N) {
   y_list <- list()
 

@@ -16,6 +16,9 @@ NULL
 #' @inheritParams prep_ribovi_data
 #' @export
 
-ribovi <- function(counts, S, X, Z, calc_S = FALSE) {
-    
+ribovi <- function(counts, S = NULL, X, Z, calc_S = FALSE,
+                   normalize = TRUE) {
+    ribovi_data <- prep_ribovi_data(counts = counts, X = X, Z = Z, 
+                                    S = S, calc_S = calc_S,
+                                    normalize = normalize)
 }

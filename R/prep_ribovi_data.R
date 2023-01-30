@@ -8,7 +8,8 @@
 #' @param Z Random effects design matrix
 #'
 #' @export
-prep_ribovi_data <- function(counts, S, X, Z, calc_S = FALSE) {
+prep_ribovi_data <- function(counts, S, X, Z,
+                             normalize = FALSE) {
   P <- ncol(X)
   U <- ncol(Z)
   y <- list()

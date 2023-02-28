@@ -81,9 +81,8 @@ fit_ribovi <- function(data, init,
             
             
             if (options$verbose == TRUE) print(data.frame(iter = iter,
-                                                          elbo = L$elbo,
-                                                          delta = L$delta,
-                                                          max_elbo = maxL))
+                                                          delta = L$delta
+                                                          ))
             
         }
         

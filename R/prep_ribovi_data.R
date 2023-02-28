@@ -2,14 +2,22 @@
 #'
 #' @param counts Data frame of counts with first column the
 #' gene ID
-#' @param S Vector of size factors with `length(S) = ncol(counts) - 1`
+#' @param S Optional vector of size factors with `length(S) = ncol(counts) - 1`
 #' @param X Fixed effects design matrix (expects preparation in column 2
 #' and treatment in column 3)
 #' @param Z Random effects design matrix
+#' @param normalize Logical, normalize counts if true
+#' @param priors Optional set of prior parameter values; if missing, 
+#' priors are chosen automatically 
+#' @param init Optional set of initial parameter values; if missing,
+#' initial values are chosen automatically
 #'
 #' @export
 prep_ribovi_data <- function(counts, S, X, Z,
-                             normalize = FALSE) {
+                             normalize,
+                             priors,
+                             init
+                             ) {
   P <- ncol(X)
   U <- ncol(Z)
   y <- list()

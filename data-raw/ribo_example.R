@@ -29,6 +29,6 @@ counts <- sim$other_data$counts
 sim$other_data$design
 ribo_example <- data.frame(geneid, counts)
 colnames(ribo_example) <- 
-    c('RiboCtrl1', 'RiboCtrl2', 'RiboTrt1', 'RiboTrt2',
+    c('geneid', 'RiboCtrl1', 'RiboCtrl2', 'RiboTrt1', 'RiboTrt2',
       'RNACtrl1', 'RNACtrl2', 'RNATrt1', 'RNATrt2')
 usethis::use_data(ribo_example, overwrite = TRUE)

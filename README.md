@@ -17,7 +17,16 @@ Using the `remotes` package:
 ```
 remotes::install_github("dcannonwalker/riboVI")
 ```
+### Getting started
 
-### Getting started 
+`ribovi()` contains the core functionality of the package: 
+
+```r
+library(riboVI)
+data(ribo_example)
+```
+
+
+
 
 

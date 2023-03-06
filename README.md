@@ -19,13 +19,14 @@ remotes::install_github("dcannonwalker/riboVI")
 ```
 ### Getting started
 
-`ribovi()` contains the core functionality of the package: 
+`ribovi()` contains the core functionality of the package. Below is a short demonstration using the `ribo_example` data set: 
 
 ```r
 library(riboVI)
 data(ribo_example)
 head(ribo_example)
 
+# Console out:
   geneid RiboCtrl1 RiboCtrl2 RiboTrt1 RiboTrt2 RNACtrl1 RNACtrl2 RNATrt1 RNATrt2
 1  gene1        97       122      146      171      103      160     231     137
 2  gene2         3         5        2        4        4        3       2       2
@@ -35,7 +36,22 @@ head(ribo_example)
 6  gene6        97        56      151       83      114       59     156     122
 ```
 
+`ribovi()` requires as arguments:
+* `counts`, data frame with a gene ID column and columns of counts for each sample
+* `X`, the fixed effects design matrix (with intercept)
+* `Z`, the sample effects design matrix (with no intercept)
+* Other arguments are optional, and we'll leave them set to their default values in this example
 
+```r
+treatment <- factor(rep(rep(c('ctrl', 'trt'), each = 2), 2))
+preparation <- factor(rep(c('ribo', 'rna'), each = 4))
+X <- model.matrix(~treatment + preparation + treatment:preparation)
+
+sample <- rep(1:4, 2)
+Z <- model.matrix(~0 + sample)
+
+ribovi_out <- ribovi(counts = ribo_example, X = X, Z = Z)
+```
 
 
 

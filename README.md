@@ -53,5 +53,19 @@ Z <- model.matrix(~0 + sample)
 ribovi_out <- ribovi(counts = ribo_example, X = X, Z = Z)
 ```
 
+If `short_out = TRUE` (the default), the output is a list with two elements:
+* `pi`, a vector of posterior probabilities of differential translational efficiency for each gene 
+* `beta`, a matrix of fixed effect estimates (on the natural log scale) for each gene 
+
+```r
+ribovi_out$pi
+ribovi_out$beta
+```
+
+To adjust posterior probabilities to control the false discovery rate, apply the `bfdr()` function to the vector of posterior probabilities:
+
+```r
+adjusted_probs <- bfdr(ribovi_out$pi)
+```
 
 
